@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加拿大28开奖结果 - 实时开奖数据分析预测网</title>
+    <meta name="description" content="加拿大28官方开奖结果查询，提供实时开奖数据、历史记录查询、智能预测分析。准确、及时的加拿大28开奖信息，让您轻松掌握开奖动态。">
+    <meta name="keywords" content="加拿大28,加拿大28开奖结果,加拿大28预测,加拿大28数据分析,加拿大28开奖查询">
+    <meta name="author" content="CloZhi">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="加拿大28开奖结果 - 实时开奖数据分析预测网">
+    <meta property="og:description" content="加拿大28官方开奖结果查询，提供实时开奖数据、历史记录查询、智能预测分析。准确、及时的加拿大28开奖信息。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yuce58.top/">
+    <meta property="og:image" content="/static/jnd28.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="加拿大28开奖结果 - 实时开奖数据分析预测网">
+    <meta name="twitter:description" content="加拿大28官方开奖结果查询，提供实时开奖数据、历史记录查询、智能预测分析。">
+    <meta name="twitter:image" content="/static/jnd28.png">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/jnd28.png">
+    <meta name="msapplication-TileImage" content="/static/jnd28.png">
+    <meta name="msapplication-TileColor" content="#4285f4">
+    <meta name="theme-color" content="#4285f4">
+    
+    <!-- 移动端主题色 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "加拿大28开奖结果",
+      "url": "https://yuce58.top",
+      "description": "加拿大28官方开奖结果查询，提供实时开奖数据、历史记录查询、智能预测分析",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yuce58.top/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- 使用Bootstrap 5 和 Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .title-container {
+            flex-grow: 1;
+        }
+        .main-title {
+            font-size: 1.5rem;  /* 减小字体大小 */
+            font-weight: 600;   /* 稍微减轻字重 */
+            margin-bottom: 1rem;
+            color: #ff0000;
+        }
+        .latest-issue {
+            color: #666;
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+        .latest-issue span {
+            color: #ff4d4f;
+            font-weight: bold;
+        }
+        .lottery-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 16px; /* 添加底部间距 */
+        }
+        .number-ball {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin: 0 2px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .operator {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .number-ball.result {
+            background-color: #007bff;
+            color: white;
+        }
+        .refresh-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: #1890ff;
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .refresh-button:hover {
+            background-color: #096dd9;
+            transform: scale(1.05);
+        }
+        .refresh-button i {
+            font-size: 1.1rem;
+        }
+        .prediction-card {
+            background: white;
+        }
+        .next-issue {
+            color: #333;  
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        .issue-number {
+            color: #ff4d4f;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .result-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 4px;
+            color: white;
+        }
+
+        #result-da {
+            background-color: #ff6b6b;
+        }
+
+        #result-xiao {
+            background-color: #ff6b6b;
+        }
+
+        #result-dan {
+            background-color: #ffd93d;
+        }
+
+        #result-shuang {
+            background-color: #ffd93d;
+        }
+        .countdown-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem; 
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+
+        .countdown-box {
+            text-align: center;
+            margin: 0 0.3rem;
+        }
+
+        .countdown-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-left: 2px;
+        }
+
+        .countdown-separator {
+            font-size: 1.2rem;  
+            color: #333;
+            margin: 0 0.2rem;   
+        }
+
+        .drawing-text {
+            font-size: 1.2rem;  
+            color: #333;
+        }
+
+        @keyframes blink {
+            0% { color: #ff4d4f; }
+            50% { color: transparent; }
+            100% { color: #ff4d4f; }
+        }
+
+        .drawing-text {
+            font-size: 1.2rem;
+            color: #ff4d4f;
+            animation: blink 1s infinite;
+        }
+
+        .number-circle, .sum-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .sum-circle {
+            background: #4285f4;
+            color: white;
+        }
+        
+        .operator {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .size-badge, .odd-even-badge {
+            padding: 4px 12px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .size-badge.big {
+            background-color: #f44336;
+        }
+        
+        .size-badge.small {
+            background-color: #ff7675;
+        }
+        
+        .odd-even-badge.odd {
+            background-color: #4cd137;
+        }
+        
+        .odd-even-badge.even {
+            background-color: #ffd32a;
+            color: #333;
+        }
+        
+        #prediction-numbers .number-circle,
+        #prediction-numbers .sum-circle,
+        #prediction-numbers .operator {
+            font-size: 1.2rem;
+        }
+        
+        .algorithm-select-wrapper {
+            position: relative;
+            min-width: 120px;
+        }
+
+        #algorithm-select {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 6px 12px;
+            padding-right: 32px;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            font-size: 14px;
+        }
+
+        #algorithm-select:focus {
+            outline: none;
+            border-color: #4285f4;
+            box-shadow: 0 0 0 2px rgba(66,133,244,0.2);
+        }
+
+        #algorithm-select::-ms-expand {
+            display: none;
+        }
+
+        .history-list {
+            width: 100%;
+        }
+        
+        .history-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .history-item:last-child {
+            border-bottom: none;
+        }
+        
+        .issue-info {
+            width: 120px;
+            flex-shrink: 0;
+        }
+        
+        .issue-number {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .issue-time {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .lottery-numbers {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .history-item .number-circle {
+            width: 32px;
+            height: 32px;
+            font-size: 1rem;
+        }
+
+        .history-item .sum-circle {
+            width: 32px;
+            height: 32px;
+            font-size: 1rem;
+        }
+
+        .history-item .operator {
+            font-size: 1rem;
+        }
+
+        .history-item .size-badge,
+        .history-item .odd-even-badge {
+            font-size: 12px;
+            padding: 2px 8px;
+        }
+
+        .history-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .history-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .history-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        
+        .history-list::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+
+   
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        * {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+   
+        .waiting {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+    
+        .history-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 2px solid #eee;
+            font-weight: 500;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .history-header .issue-info {
+            width: 120px;
+            padding-left: 15px;
+        }
+        
+        .history-header .lottery-numbers {
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+   
+        .history-item .issue-info {
+            padding-left: 15px;
+        }
+
+     
+        .history-header {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            font-weight: 500;
+            color: #333;
+            background: #f8f9fa;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 1px;
+            font-size: 13px;
+        }
+        
+        .history-header .issue-info {
+            text-align: left;
+        }
+
+     
+        .history-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        
+        .history-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .history-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+
+        .history-container {
+            margin-top: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+ 
+        .history-header {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            font-weight: 500;
+            color: #333;
+            background: #f8f9fa;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 1px;
+            font-size: 13px;
+        }
+
+     
+        .next-prediction {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 2px solid #eee;
+            background: #fff;
+        }
+
+        .next-prediction .issue-number {
+            font-size: 12px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .next-prediction .waiting-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .next-prediction .prediction-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .next-prediction .prediction-text span {
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: #f5f5f5;
+            color: #666;
+        }
+
+      
+        .history-list {
+            border-radius: 0 0 8px 8px;
+        }
+
+     
+        .history-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        
+        .history-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .history-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .history-list {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .waiting {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .history-item .issue-info {
+            padding-left: 0;
+        }
+
+        .history-item .issue-number {
+            font-size: 12px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .history-item .prediction {
+            text-align: center;
+        }
+
+        .prediction-text {
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: #f5f5f5;
+            margin: 0 1px;
+        }
+
+        .prediction-text.hit {
+            color: #fff;
+            background-color: #52c41a;
+        }
+
+        .prediction-text.miss {
+            color: #fff;
+            background-color: #ff4d4f;
+        }
+
+    
+        .history-item .number-circle,
+        .history-item .sum-circle {
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            line-height: 22px;
+        }
+
+        .history-item .sum-circle {
+            background: #4285f4;
+            color: white;
+        }
+
+        .history-item .operator {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+    <div class="modal fade" id="scratchCardModal" tabindex="-1" aria-labelledby="scratchCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="d-flex align-items-center">
+                        <h5 class="modal-title mb-0" id="scratchCardModalLabel">刮刮乐</h5>
+                        <span class="text-muted ms-3">第<span class="text-danger fw-bold" id="modal-current-issue">-</span>期开奖结果</span>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="scratch-card-container position-relative" style="width: 300px; height: 150px; margin: 0 auto;">
+                        <canvas id="scratchCard" width="300" height="150" style="position: absolute; top: 0; left: 0; z-index: 2;"></canvas>
+                        <div id="predictionResult" class="prediction-content d-flex align-items-center justify-content-center" style="width: 300px; height: 150px; background: #f8f9fa; border-radius: 8px;">
+                            <div class="text-center">
+                                <div id="scratchLotteryFormula" style="font-size: 4.38rem; font-weight: bold; color: #ff4d4f;">
+                                    <style>
+                                        #scratchLotteryFormula .operator {
+                                            font-size: 0.7em;
+                                            vertical-align: middle;
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <span class="text-muted me-2">距</span>
+                                <span class="text-danger fw-bold" id="modal-next-issue">-</span>
+                                <span class="text-muted mx-2">剩</span>
+                                <div class="countdown-container me-2" id="modal-countdown-display">
+                                    <div class="countdown-box">
+                                        <span class="countdown-number">-</span>
+                                        <span class="countdown-label">分</span>
+                                    </div>
+                                    <span class="countdown-separator">:</span>
+                                    <div class="countdown-box">
+                                        <span class="countdown-number">-</span>
+                                        <span class="countdown-label">秒</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-link btn-sm p-0 ms-2" onclick="refreshScratchCard()">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <style>
+        #scratchCardBtn {
+            transition: all 0.3s;
+        }
+        #scratchCardBtn:hover {
+            transform: scale(1.05);
+        }
+        .scratch-card-container {
+            touch-action: none;
+            user-select: none;
+        }
+        .prediction-content {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+    
+        .modal-backdrop.show {
+            opacity: 1.00;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="text-center">
+        <img src="/static/9y.gif" alt="广告" style="width: 100%; max-width: 100%; height: auto; cursor: pointer;" onclick="window.open('http://9y.com', '_blank')">
+    </div>
+
+   
+    <style>
+        @keyframes colorChange {
+            0% { color: #ff0000; }
+            25% { color: #ff6b00; }
+            50% { color: #ff0080; }
+            75% { color: #9500ff; }
+            100% { color: #ff0000; }
+        }
+        .domain-text {
+            animation: colorChange 2s infinite;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+    <div class="alert alert-warning text-center py-3" style="border-radius: 0; margin-bottom: 0; background-color: #fff3cd; border: 1px solid #ffeeba;">
+        <div class="container">
+            <p class="mb-2" style="color: #856404; font-weight: bold;">郑重声明：</p>
+            <p class="mb-2" style="color: #856404;">本站只用于参考交流，请勿用于非法用途，例如诈骗等违法行为。如有以上行为，请用户立即退出。</p>
+            <p class="mb-2"><span class="domain-text">本站永久导航地址：:pc28.cloud</span></p>
+            <p class="mb-2"><span class="domain-text">备用网址①：yuce68.top</span></p>
+            <p class="mb-0"><span class="domain-text">为防止失联，请一定要记住防失联地址！</span></p>
+        </div>
+    </div>
+
+    <div class="container pt-3">
+        <div class="header-section">
+            <div class="logo-container">
+                <img src="/static/jnd28.png" alt="加拿大28 Logo">
+            </div>
+            <div class="title-container">
+                <h1 class="main-title">加拿大28</h1>
+                <div class="latest-issue">最新：<span id="current-issue">-</span></div>
+            </div>
+        </div>
+        
+        <div class="lottery-card position-relative">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="mb-0">下期开奖</h3>
+                <div class="d-flex align-items-center">
+                    <span class="next-issue">期号：</span>
+                    <span id="next-issue-display" class="issue-number">-</span>
+                </div>
+            </div>
+            <div id="latest-result">
+
+                <div class="mt-3 text-center">
+                    <div id="lottery-numbers" class="d-inline-flex align-items-center">
+                        <span class="number-ball">-</span>
+                        <span class="operator">+</span>
+                        <span class="number-ball">-</span>
+                        <span class="operator">+</span>
+                        <span class="number-ball">-</span>
+                        <span class="operator">=</span>
+                        <span class="number-ball result">-</span>
+                    </div>
+                    <div class="mt-2">
+                        <span id="result-da" class="result-tag">大</span>
+                        <span id="result-shuang" class="result-tag">双</span>
+                    </div>
+                </div>
+                <div class="mt-3 d-flex align-items-center justify-content-center">
+                    <div class="countdown-container" id="countdown-display">
+                        <div class="countdown-box">
+                            <span id="countdown-minutes" class="countdown-number">-</span>
+                            <span class="countdown-label">分</span>
+                        </div>
+                        <span class="countdown-separator">:</span>
+                        <div class="countdown-box">
+                            <span id="countdown-seconds" class="countdown-number">-</span>
+                            <span class="countdown-label">秒</span>
+                        </div>
+                    </div>
+                    <div class="countdown-container" id="drawing-display" style="display: none;">
+                        <span class="drawing-text">开奖中...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lottery-card prediction-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h5 mb-0">下期预测</h2>
+                <div class="d-flex align-items-center">
+                    <button id="scratchCardBtn" class="btn btn-outline-primary btn-sm me-2">
+                        <i class="bi bi-stars"></i> 刮刮卡
+                    </button>
+                    <div class="algorithm-select-wrapper">
+                        <select id="algorithm-select" class="form-select" onchange="changeAlgorithm(this.value)">
+                            {% for alg_id, alg_name in algorithms %}
+                            <option value="{{ alg_id }}" {% if alg_id == current_alg_id %}selected{% endif %}>{{ alg_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="prediction-result" class="mt-3">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <div id="prediction-numbers" class="d-inline-flex align-items-center">
+                        <span class="number-circle me-2"></span>
+                        <span class="operator me-2">+</span>
+                        <span class="number-circle me-2"></span>
+                        <span class="operator me-2">+</span>
+                        <span class="number-circle me-2"></span>
+                        <span class="operator me-2">=</span>
+                        <span class="sum-circle"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-2">
+                    <span class="size-badge me-2"></span>
+                    <span class="odd-even-badge"></span>
+                </div>
+                <div class="mt-2 text-muted text-center">
+                    <small>预测仅供参考，不作为投注依据</small>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="history-container">
+           
+            <div class="history-header">
+                <div style="text-align: left; padding-left: 10px;">期号</div>
+                <div style="text-align: center;">开奖</div>
+                <div style="text-align: right; padding-right: 10px;">预测</div>
+            </div>
+
+           
+            <div class="next-prediction">
+                <div class="issue-number" id="next-issue-row" style="text-align: left; padding-left: 10px;"></div>
+                <div class="waiting-text">等待开奖</div>
+                <div class="prediction-text" style="justify-content: flex-end; padding-right: 10px;">
+                    <span class="prediction-text-size"></span>
+                    <span class="prediction-text-oddeven"></span>
+                </div>
+            </div>
+
+           
+            <div class="history-list">
+               
+            </div>
+        </div>
+    </div>
+
+   
+    <footer class="bg-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-2" style="color: #666;">Copyright © 2025 CloZhi(&#26412;&#31449;) All Rights Reserved.</p>
+                <div class="disclaimer" style="color: #888; font-size: 0.9rem; max-width: 800px; margin: 0 auto;">
+                    <p class="mb-1">&#20813;&#36131;&#22768;&#26126;&#65306;&#26412;&#31449;&#25152;&#26377;&#25968;&#25454;&#20165;&#20379;&#23089;&#20048;&#21442;&#32771;&#65292;&#19981;&#25552;&#20379;&#20219;&#20309;&#24418;&#24335;&#30340;&#25237;&#27880;&#26381;&#21153;&#25110;&#36164;&#37329;&#24448;&#26469;&#12290;</p>
+                    <p class="mb-0">&#22914;&#26377;&#20405;&#26435;&#25110;&#36829;&#27861;&#20869;&#23481;&#35831;&#21450;&#26102;&#32852;&#31995;&#31449;&#38271;&#21024;&#38500;&#65292;&#20351;&#29992;&#26412;&#32593;&#31449;&#21363;&#20195;&#34920;&#21516;&#24847;&#26412;&#22768;&#26126;&#12290;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let countdownInterval;
+
+        function formatTime(seconds) {
+            if (seconds < 0) return "开奖中...";
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes}分${remainingSeconds}秒`;
+        }
+
+        function startCountdown(targetTime) {
+            clearInterval(countdownInterval);
+            const countdownDisplay = document.getElementById('countdown-display');
+            const drawingDisplay = document.getElementById('drawing-display');
+            
+            function updateCountdown() {
+                const now = Math.floor(Date.now() / 1000);
+                const timeLeft = Math.max(0, targetTime - now);
+                
+                if (timeLeft <= 5) { // 最后5秒显示开奖中
+                    countdownDisplay.style.display = 'none';
+                    drawingDisplay.style.display = 'flex';
+                } else {
+                    countdownDisplay.style.display = 'flex';
+                    drawingDisplay.style.display = 'none';
+                    
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    
+                    document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+
+             
+                    const modalCountdownNumbers = document.querySelectorAll('#modal-countdown-display .countdown-number');
+                    if (modalCountdownNumbers.length === 2) {
+                        modalCountdownNumbers[0].textContent = minutes.toString().padStart(2, '0');
+                        modalCountdownNumbers[1].textContent = seconds.toString().padStart(2, '0');
+                    }
+
+     
+                    const nextIssue = document.getElementById('next-issue-display').textContent;
+                    const modalNextIssue = document.getElementById('modal-next-issue');
+                    if (modalNextIssue && nextIssue !== '-') {
+                        modalNextIssue.textContent = nextIssue;
+                    }
+                }
+                
+                if (timeLeft === 0) {
+                    clearInterval(countdownInterval);
+                    setTimeout(async () => {
+                        await refreshData();  // 刷新数据
+                    }, 2000); // 倒计时结束后2秒刷新数据
+                }
+            }
+            
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        function updateLatestDraw(data) {
+ 
+            document.getElementById('current-issue').textContent = data.issue || '-';
+            
+     
+            document.getElementById('next-issue-display').textContent = data.next_issue || '-';
+
+         
+            if (data.numbers) {
+                const [num1, num2, num3, sum] = data.numbers.split(/[+=]/).map(n => n.trim());
+                const sumValue = parseInt(sum);
+                
+     
+                const circles = document.querySelectorAll('#lottery-numbers .number-ball');
+                circles[0].textContent = num1;
+                circles[1].textContent = num2;
+                circles[2].textContent = num3;
+                document.querySelector('#lottery-numbers .number-ball.result').textContent = sum;
+                
+          
+                const resultTags = document.querySelector('#lottery-numbers').nextElementSibling;
+                resultTags.innerHTML = `
+                    <span id="result-${sum >= 14 ? 'da' : 'xiao'}" class="result-tag">${sum >= 14 ? '大' : '小'}</span>
+                    <span id="result-${sum % 2 === 0 ? 'shuang' : 'dan'}" class="result-tag">${sum % 2 === 0 ? '双' : '单'}</span>
+                `;
+                
+       
+                if (data.next_time) {
+                    // 验证时间戳格式
+                    let targetTime = parseInt(data.next_time);
+                    const timestampStr = data.next_time.toString();
+                    const timestampLen = timestampStr.length;
+
+                    // 如果时间戳 <= 1000 秒，直接当作倒计时秒数
+                    if (targetTime <= 1000) {
+                        const now = Math.floor(Date.now() / 1000);
+                        targetTime = now + targetTime;
+                    }
+                    // 如果是 10 位秒级时间戳，转为毫秒
+                    else if (timestampLen === 10) {
+                        targetTime = targetTime * 1000;
+                    }
+                    // 如果是毫秒级但不合理 (比如 11 位)，直接忽略
+                    else if (timestampLen >= 11) {
+                        // 使用倒计时秒数计算
+                        const countdown = data.countdown || 180;
+                        targetTime = Math.floor(Date.now() / 1000) + countdown;
+                    }
+
+                    // 验证时间戳合理性 (当前时间前后 10 分钟内)
+                    const nowMs = Date.now();
+                    const minValid = nowMs - 60000;  // 1分钟前
+                    const maxValid = nowMs + 600000;  // 10分钟后
+
+                    if (targetTime * 1000 > minValid && targetTime * 1000 < maxValid) {
+                        startCountdown(targetTime);
+                    } else {
+                        // 时间戳无效，使用倒计时秒数计算
+                        const countdown = data.countdown || 180;
+                        startCountdown(Math.floor(Date.now() / 1000) + countdown);
+                    }
+                }
+            }
+        }
+
+        async function updatePrediction(retryCount = 0) {
+            try {
+                const response = await fetch('/api/predict', {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data || !data.success) {
+                    throw new Error('Invalid prediction data received');
+                }
+                
+                if (data.success && data.prediction) {
+      
+                    const match = data.prediction.prediction.match(/(\d+)\+(\d+)\+(\d+)=(\d+)\(([大小])([单双])\)/);
+                    if (match) {
+                        const [_, num1, num2, num3, sum, size, oddEven] = match;
+                        
+             
+                        const circles = document.querySelectorAll('#prediction-numbers .number-circle');
+                        circles[0].textContent = num1;
+                        circles[1].textContent = num2;
+                        circles[2].textContent = num3;
+                        document.querySelector('#prediction-numbers .sum-circle').textContent = sum;
+                        
+               
+                        const sizeBadge = document.querySelector('#prediction-result .size-badge');
+                        const oddEvenBadge = document.querySelector('#prediction-result .odd-even-badge');
+                        if (sizeBadge && oddEvenBadge) {
+                            sizeBadge.textContent = size;
+                            oddEvenBadge.textContent = oddEven;
+                            
+                            // 设置标签样式
+                            sizeBadge.className = `size-badge me-2 ${size === '大' ? 'big' : 'small'}`;
+                            oddEvenBadge.className = `odd-even-badge ${oddEven === '单' ? 'odd' : 'even'}`;
+                        }
+
+                        // 更新下一期期号
+                        if (data.prediction.next_issue) {
+                            const nextIssueDisplay = document.getElementById('next-issue-display');
+                            const nextIssueRow = document.getElementById('next-issue-row');
+                            if (nextIssueDisplay) nextIssueDisplay.textContent = data.prediction.next_issue;
+                            if (nextIssueRow) nextIssueRow.textContent = data.prediction.next_issue;
+                        }
+
+                   
+                        const sizeSpan = document.querySelector('.prediction-text-size');
+                        const oddEvenSpan = document.querySelector('.prediction-text-oddeven');
+                        if (sizeSpan && oddEvenSpan) {
+                            sizeSpan.textContent = size;
+                            oddEvenSpan.textContent = oddEven;
+                            sizeSpan.className = `prediction-text ${size === '大' ? 'hit' : 'miss'}`;
+                            oddEvenSpan.className = `prediction-text ${oddEven === '单' ? 'hit' : 'miss'}`;
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('获取预测失败:', error);
+
+                if (retryCount < 3) {
+                    console.log(`重试预测请求 (${retryCount + 1}/3)...`);
+                    setTimeout(() => {
+                        updatePrediction(retryCount + 1);
+                    }, 1000 * (retryCount + 1)); 
+                }
+            }
+        }
+
+        function updateHistoryList(historyData) {
+            const historyList = document.querySelector('.history-list');
+            historyList.innerHTML = '';
+            
+            if (!historyData || historyData.length === 0) {
+                historyList.innerHTML = '<div class="waiting">暂无历史记录</div>';
+                return;
+            }
+
+            historyData.forEach(item => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                
+
+                const [num1, num2, num3, sum] = item.numbers.split(/[+=]/).map(n => n.trim());
+                
+
+                let predictionSize = '-';
+                let predictionOddEven = '-';
+                let sizeHit = false;
+                let oddEvenHit = false;
+                
+
+                if (item.prediction) {
+                    const match = item.prediction.match(/([大小])([单双])/);
+                    if (match) {
+                        predictionSize = match[1];
+                        predictionOddEven = match[2];
+                        
+
+                        sizeHit = predictionSize === item.size;
+
+                        oddEvenHit = predictionOddEven === item.odd_even;
+                    }
+                }
+                
+                historyItem.innerHTML = `
+                    <div class="issue-info" style="text-align: left; padding-left: 10px;">
+                        <div class="issue-number">${item.issue}</div>
+                    </div>
+                    <div class="lottery-numbers">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <span class="number-circle me-2">${num1}</span>
+                            <span class="operator me-2">+</span>
+                            <span class="number-circle me-2">${num2}</span>
+                            <span class="operator me-2">+</span>
+                            <span class="number-circle me-2">${num3}</span>
+                            <span class="operator me-2">=</span>
+                            <span class="sum-circle">${sum}</span>
+                        </div>
+                    </div>
+                    <div class="prediction" style="text-align: right; padding-right: 10px;">
+                        <span class="prediction-text ${sizeHit ? 'hit' : 'miss'}">${predictionSize}</span>
+                        <span class="prediction-text ${oddEvenHit ? 'hit' : 'miss'}">${predictionOddEven}</span>
+                    </div>
+                `;
+                
+                historyList.appendChild(historyItem);
+            });
+        }
+
+        function updateUI(data) {
+            if (data.success && data.data) {
+
+                updateLatestDraw(data.data);
+                
+
+                if (data.data.history) {
+                    updateHistoryList(data.data.history);
+                }
+            } else {
+                console.error('获取数据失败:', data.error);
+            }
+        }
+
+
+        async function refreshData() {
+            try {
+                const response = await fetch('/api/get_latest', {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                updateUI(data);
+
+                await updatePrediction();
+            } catch (error) {
+                console.error('刷新数据失败:', error);
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            refreshData();
+
+            // 定期刷新，每30秒一次（防抖）
+            setInterval(() => {
+                // 只有当倒计时大于60秒时才刷新，避免频繁请求
+                const countdownEl = document.getElementById('countdown-minutes');
+                const secondsEl = document.getElementById('countdown-seconds');
+                if (countdownEl && secondsEl) {
+                    const min = parseInt(countdownEl.textContent) || 0;
+                    const sec = parseInt(secondsEl.textContent) || 0;
+                    const totalSec = min * 60 + sec;
+                    if (totalSec > 60) {
+                        refreshData();
+                    }
+                }
+            }, 30000);
+        });
+
+
+        function changeAlgorithm(algId) {
+            fetch(`/api/set_algorithm?alg=${algId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+
+                        const url = new URL(window.location.href);
+                        url.searchParams.set('alg', algId);
+                        window.history.pushState({}, '', url);
+                        
+
+                        updatePrediction();
+                    }
+                })
+                .catch(error => {
+                    console.error('切换算法失败:', error);
+                });
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = new bootstrap.Modal(document.getElementById('scratchCardModal'));
+            const scratchCardBtn = document.getElementById('scratchCardBtn');
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+            let scratchCardUpdateInterval;
+
+            scratchCardBtn.addEventListener('click', function() {
+                modal.show();
+                initScratchCard();
+
+                startScratchCardUpdate();
+            });
+
+
+            document.getElementById('scratchCardModal').addEventListener('hidden.bs.modal', function() {
+
+                clearInterval(scratchCardUpdateInterval);
+                resetScratchCard();
+            });
+
+            function startScratchCardUpdate() {
+
+                updateScratchCardContent();
+
+                scratchCardUpdateInterval = setInterval(updateScratchCardContent, 30000);
+            }
+
+            function updateScratchCardContent() {
+
+                const currentIssue = document.getElementById('current-issue').textContent;
+                const modalCurrentIssue = document.getElementById('modal-current-issue');
+                if (modalCurrentIssue && currentIssue !== '-') {
+                    modalCurrentIssue.textContent = currentIssue;
+                }
+                
+
+                const lotteryNumbers = document.querySelectorAll('#lottery-numbers .number-ball');
+                if (lotteryNumbers.length >= 4) { 
+                    const scratchLotteryFormula = document.getElementById('scratchLotteryFormula');
+                    if (scratchLotteryFormula) {
+                        scratchLotteryFormula.innerHTML = `${lotteryNumbers[0].textContent}<span class="operator">+</span>${lotteryNumbers[1].textContent}<span class="operator">+</span>${lotteryNumbers[2].textContent}<span class="operator">=</span>${lotteryNumbers[3].textContent}`;
+                    }
+                }
+            }
+
+
+            window.refreshScratchCard = function() {
+                resetScratchCard();
+                updateScratchCardContent();
+            };
+
+            function resetScratchCard() {
+                const canvas = document.getElementById('scratchCard');
+                const ctx = canvas.getContext('2d');
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+
+                ctx.fillStyle = '#CCCCCC';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+                for (let i = 0; i < canvas.width; i += 4) {
+                    for (let j = 0; j < canvas.height; j += 4) {
+                        if (Math.random() > 0.5) {
+                            ctx.fillStyle = '#DDDDDD';
+                            ctx.fillRect(i, j, 2, 2);
+                        }
+                    }
+                }
+            }
+
+            function initScratchCard() {
+                const canvas = document.getElementById('scratchCard');
+                const ctx = canvas.getContext('2d');
+                
+
+                resetScratchCard();
+                
+
+                updateScratchCardContent();
+
+
+                function startDrawing(e) {
+                    isDrawing = true;
+                    [lastX, lastY] = getCoordinates(e);
+                }
+
+                function draw(e) {
+                    if (!isDrawing) return;
+                    e.preventDefault();
+
+                    const [currentX, currentY] = getCoordinates(e);
+
+                    ctx.globalCompositeOperation = 'destination-out';
+                    ctx.beginPath();
+                    ctx.lineWidth = 30;
+                    ctx.lineCap = 'round';
+                    ctx.moveTo(lastX, lastY);
+                    ctx.lineTo(currentX, currentY);
+                    ctx.stroke();
+
+                    [lastX, lastY] = [currentX, currentY];
+
+
+                    checkRevealPercentage();
+                }
+
+                function stopDrawing() {
+                    isDrawing = false;
+                }
+
+                function getCoordinates(e) {
+                    const rect = canvas.getBoundingClientRect();
+                    const x = (e.clientX || (e.touches ? e.touches[0].clientX : lastX)) - rect.left;
+                    const y = (e.clientY || (e.touches ? e.touches[0].clientY : lastY)) - rect.top;
+                    return [x, y];
+                }
+
+                function checkRevealPercentage() {
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const pixels = imageData.data;
+                    let transparentPixels = 0;
+                    
+                    for (let i = 0; i < pixels.length; i += 4) {
+                        if (pixels[i + 3] < 128) { 
+                            transparentPixels++;
+                        }
+                    }
+
+                    const totalPixels = canvas.width * canvas.height;
+                    const revealedPercentage = (transparentPixels / totalPixels) * 100;
+
+
+                    if (revealedPercentage > 70) {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    }
+                }
+
+
+                canvas.addEventListener('mousedown', startDrawing);
+                canvas.addEventListener('mousemove', draw);
+                canvas.addEventListener('mouseup', stopDrawing);
+                canvas.addEventListener('mouseleave', stopDrawing);
+
+                canvas.addEventListener('touchstart', startDrawing);
+                canvas.addEventListener('touchmove', draw);
+                canvas.addEventListener('touchend', stopDrawing);
+            }
+        });
+    </script>
+</body>
+</html> 

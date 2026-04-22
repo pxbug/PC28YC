@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员后台 - 访问记录</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .admin-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .stats-card:hover {
+            transform: translateY(-2px);
+        }
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stats-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .visits-table {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .table-header {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .visit-row {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f1f3f4;
+            transition: background-color 0.2s;
+        }
+        .visit-row:hover {
+            background-color: #f8f9fa;
+        }
+        .visit-row:last-child {
+            border-bottom: none;
+        }
+        .device-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+        }
+        .pagination-container {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .refresh-btn {
+            background: #667eea;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .refresh-btn:hover {
+            background: #5a6fd8;
+            transform: scale(1.05);
+        }
+        .nav-back {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .nav-back:hover {
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        <div class="container">
+            <a href="/" class="nav-back">
+                <i class="bi bi-arrow-left"></i>
+                返回首页
+            </a>
+            <h1 class="mb-0">
+                <i class="bi bi-graph-up"></i>
+                访问记录管理
+            </h1>
+            <p class="mb-0 mt-2 opacity-75">实时监控网站访问情况</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" id="stats-container">
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-number" id="total-visits">-</div>
+                    <div class="stats-label">总访问量</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-number" id="today-visits">-</div>
+                    <div class="stats-label">今日访问</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-number" id="unique-visitors">-</div>
+                    <div class="stats-label">独立访客</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-number" id="mobile-ratio">-</div>
+                    <div class="stats-label">移动端占比</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="visits-table">
+            <div class="table-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-list-ul"></i>
+                    访问记录
+                </h5>
+                <button class="refresh-btn" onclick="loadVisits()">
+                    <i class="bi bi-arrow-clockwise"></i>
+                    刷新
+                </button>
+            </div>
+            
+            <div class="table-container" id="visits-container">
+                <div class="loading">
+                    <i class="bi bi-hourglass-split"></i>
+                    加载中...
+                </div>
+            </div>
+            
+            <div class="pagination-container" id="pagination-container" style="display: none;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-muted">
+                        显示 <span id="current-range">-</span> 条记录
+                    </div>
+                    <div class="btn-group" id="pagination-buttons">
+                        <!-- 分页按钮将在这里生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentPage = 1;
+        const perPage = 20;
+
+        function formatTime(timestamp) {
+            if (!timestamp || isNaN(timestamp)) {
+                return '未知时间';
+            }
+            try {
+                const date = new Date(timestamp * 1000);
+                if (isNaN(date.getTime())) {
+                    return '无效时间';
+                }
+                return date.toLocaleString('zh-CN', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+            } catch (error) {
+                return '时间错误';
+            }
+        }
+
+        function getDeviceIcon(record) {
+            // 优先使用解析后的设备类型
+            if (record.device_type) {
+                switch (record.device_type.toLowerCase()) {
+                    case 'mobile':
+                        return '<i class="bi bi-phone device-icon"></i>';
+                    case 'tablet':
+                        return '<i class="bi bi-tablet device-icon"></i>';
+                    case 'desktop':
+                        return '<i class="bi bi-laptop device-icon"></i>';
+                    default:
+                        return '<i class="bi bi-question-circle device-icon"></i>';
+                }
+            }
+            
+            // 如果没有解析的设备类型，尝试从user_agent判断
+            const userAgent = record.user_agent;
+            if (!userAgent || typeof userAgent !== 'string') {
+                return '<i class="bi bi-question-circle device-icon"></i>';
+            }
+            if (userAgent.includes('Mobile')) {
+                return '<i class="bi bi-phone device-icon"></i>';
+            } else if (userAgent.includes('Tablet')) {
+                return '<i class="bi bi-tablet device-icon"></i>';
+            } else {
+                return '<i class="bi bi-laptop device-icon"></i>';
+            }
+        }
+
+        function getBrowserInfo(record) {
+            // 优先使用解析后的浏览器信息
+            if (record.browser && record.browser !== 'Unknown') {
+                return record.browser.split(' ')[0]; // 只显示浏览器名称，不显示版本
+            }
+            
+            // 如果没有解析的浏览器信息，尝试从user_agent判断
+            const userAgent = record.user_agent;
+            if (!userAgent || typeof userAgent !== 'string') {
+                return '未知';
+            }
+            if (userAgent.includes('Chrome')) return 'Chrome';
+            if (userAgent.includes('Firefox')) return 'Firefox';
+            if (userAgent.includes('Safari')) return 'Safari';
+            if (userAgent.includes('Edge')) return 'Edge';
+            return '其他';
+        }
+
+        function formatLocation(record) {
+            // 构建位置信息，优先显示城市和省份
+            const parts = [];
+            
+            if (record.city && record.city !== 'Unknown') {
+                parts.push(record.city);
+            }
+            
+            if (record.province && record.province !== 'Unknown') {
+                // 避免重复显示（比如上海市上海市）
+                if (!record.city || record.city !== record.province) {
+                    parts.push(record.province);
+                }
+            }
+            
+            if (record.country && record.country !== 'Unknown' && record.country !== 'China') {
+                parts.push(record.country);
+            }
+            
+            // 如果没有任何位置信息，返回未知
+            if (parts.length === 0) {
+                return '未知';
+            }
+            
+            // 返回格式化的位置信息
+            return parts.join(' ');
+        }
+
+        async function loadVisits(page = 1) {
+            try {
+                const container = document.getElementById('visits-container');
+                container.innerHTML = '<div class="loading"><i class="bi bi-hourglass-split"></i> 加载中...</div>';
+
+                const response = await fetch(`/api/visits?page=${page}&per_page=${perPage}`);
+                const data = await response.json();
+
+                if (!data.success) {
+                    throw new Error(data.error || '加载失败');
+                }
+
+                displayVisits(data.data);
+                updatePagination(data.data.pagination);
+                loadStats();
+            } catch (error) {
+                console.error('加载访问记录失败:', error);
+                document.getElementById('visits-container').innerHTML = 
+                    `<div class="error-message">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        加载失败: ${error.message}
+                    </div>`;
+            }
+        }
+
+        function displayVisits(data) {
+            const container = document.getElementById('visits-container');
+            const records = data.records;
+
+            if (!records || records.length === 0) {
+                container.innerHTML = '<div class="loading">暂无访问记录</div>';
+                return;
+            }
+
+            let html = '';
+            records.forEach(record => {
+                html += `
+                    <div class="visit-row">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <div class="d-flex align-items-center">
+                                    ${getDeviceIcon(record)}
+                                    <span class="text-muted">${getBrowserInfo(record)}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="text-primary">${record.ip_address || '未知'}</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span>${record.path || '/'}</span>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="text-muted">${formatLocation(record)}</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="text-muted">${record.timestamp ? formatTime(record.timestamp) : '未知'}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function updatePagination(pagination) {
+            const container = document.getElementById('pagination-container');
+            const buttonsContainer = document.getElementById('pagination-buttons');
+            const currentRange = document.getElementById('current-range');
+
+            if (pagination.total <= perPage) {
+                container.style.display = 'none';
+                return;
+            }
+
+            container.style.display = 'block';
+            
+            const start = (pagination.page - 1) * pagination.per_page + 1;
+            const end = Math.min(pagination.page * pagination.per_page, pagination.total);
+            currentRange.textContent = `${start}-${end} / ${pagination.total}`;
+
+            const totalPages = Math.ceil(pagination.total / pagination.per_page);
+            let buttons = '';
+
+            buttons += `
+                <button class="btn btn-outline-secondary btn-sm" 
+                        onclick="loadVisits(${pagination.page - 1})" 
+                        ${pagination.page <= 1 ? 'disabled' : ''}>
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+            `;
+
+            const startPage = Math.max(1, pagination.page - 2);
+            const endPage = Math.min(totalPages, pagination.page + 2);
+
+            for (let i = startPage; i <= endPage; i++) {
+                buttons += `
+                    <button class="btn ${i === pagination.page ? 'btn-primary' : 'btn-outline-secondary'} btn-sm" 
+                            onclick="loadVisits(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+
+            buttons += `
+                <button class="btn btn-outline-secondary btn-sm" 
+                        onclick="loadVisits(${pagination.page + 1})" 
+                        ${pagination.page >= totalPages ? 'disabled' : ''}>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            `;
+
+            buttonsContainer.innerHTML = buttons;
+        }
+
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/visits/stats');
+                const data = await response.json();
+
+                if (data.success) {
+                    const stats = data.data;
+                    document.getElementById('total-visits').textContent = stats.total_visits || 0;
+                    document.getElementById('today-visits').textContent = stats.today_visits || 0;
+                    document.getElementById('unique-visitors').textContent = stats.unique_visitors || 0;
+                    
+                    const mobileRatio = stats.mobile_ratio || 0;
+                    document.getElementById('mobile-ratio').textContent = `${mobileRatio}%`;
+                }
+            } catch (error) {
+                console.error('加载统计数据失败:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadVisits();
+            
+
+            setInterval(() => {
+                loadVisits(currentPage);
+                loadStats();
+            }, 30000);
+        });
+    </script>
+</body>
+</html> 
